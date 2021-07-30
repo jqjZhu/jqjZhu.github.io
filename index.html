@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        li {
+            margin: 0px 15px;
+        }
+
+        .uk-article {
+            margin: 20px 10%;
+        }
+
+        .title {
+            background-image: url("./dataset-cover.jpg");
+            color: white;
+        }
+
+        .uk-heading-medium,
+        .uk-iconnav {
+            margin: 5px 15px;
+            color: white;
+        }
+
+        h2 {
+            margin: 5px 15px;
+            color: white;
+        }
+
+        #content {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 45% 45%;
+            column-gap: 3%;
+            width: 80vw;
+            height: 70vh;
+            border: solid 1px lightgray;
+            border-radius: 10px;
+        }
+
+        .d3-tip {
+            /* background-color: lightgoldenrodyellow; */
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        li {
+            text-align: center;
+        }
+
+        #annotation {
+            line-height: 40px;
+            font-size: 20px;
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 500px;
+            height: 5px;
+            background: #ddd;
+            border: none;
+            border-radius: 3px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            border: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 20%;
+            background: goldenrod;
+            margin-top: -4px;
+        }
+
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        input[type=range]:focus::-webkit-slider-runnable-track {
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="uk-article">
+
+        <div class="title">
+            <h1 class="uk-heading-medium">Auto-mpg</h1>
+            <h2>Mileage per gallon performances of various cars</h2>
+            <ul class="uk-iconnav">
+                <li class="s1"><a href="#" uk-icon="icon: world ; ratio: 2.5"></a>scatter</li>
+                <li class="s2"><a href="#" uk-icon="icon: joomla ; ratio: 2.5"></a> pie</li>
+                <li class="s3"><a href="#" uk-icon="icon: lifesaver ; ratio: 2.5"></a>line</li>
+                <li class="s4"><a href="#" uk-icon="icon: grid ; ratio: 2.5"></a>bar</li>
+            </ul>
+        </div>
+
+        <!-- 内容 -->
+        <section id="content">
+            <div id="chart">
+
+            </div>
+            <div>
+                <div id="timeselect"></div>
+
+                <div id="annotation">
+                    <p> The horsepower and mpg of a car show a negative correlation trend.
+
+                    </p>
+                    <p>
+                        Moreover, American car brands generally have higher horsepower, and the number of kilometers per
+                        gallon is lower than that of Japanese auto industry brands and European brands, and they are
+                        generally poor in terms of fuel efficiency.
+                    </p>
+
+                    <p>
+                        Between 1970 and 1980, Japanese auto industry brands accounted for 20%, while American brands
+                        accounted for 63%.
+                    </p>
+                    <p>
+                        Looking at the trend over time, the Mileage per gallon performances of the overall car brand is
+                        showing an upward trend.
+                    </p>
+                    <p>
+                        From the comparison of the number of cylinders, it can be said that the more the number of
+                        cylinders, the higher the fuel efficiency.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>
